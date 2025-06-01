@@ -1,0 +1,138 @@
+/* ActivityItem styles (Used in DashboardView's Recent Activities) */
+.activity-item { 
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column; /* Stack elements by default for smaller screens */
+  align-items: flex-start;
+  gap: 10px;
+  transition: box-shadow 0.2s ease-in-out, background-color 0.3s ease;
+}
+
+.activity-item:hover {
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.activity-header { /* Container for icon and details in ActivityItem */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.activity-icon { /* Icon in ActivityItem */
+  font-size: 1.8em;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.activity-details { /* Text details in ActivityItem */
+  flex-grow: 1;
+}
+
+.activity-name {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 3px 0;
+  transition: color 0.3s ease;
+}
+
+.activity-meta {
+  font-size: 0.85em;
+  color: #7f8c8d;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.activity-stats { /* Stats in ActivityItem */
+  text-align: left;
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.activity-stats p {
+  font-size: 0.9em;
+  margin: 0;
+  color: #34495e;
+  transition: color 0.3s ease;
+}
+
+.activity-stats .stat-label {
+  font-weight: 500;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+/* Dark Theme for ActivityItem */
+body.dark-theme .activity-item {
+  background-color: #2c2c2c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+body.dark-theme .activity-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+body.dark-theme .activity-icon { /* Updated for generic activity-icon used by ActivityItem */
+   background-color: #3a3a3a;
+   color: #e0e0e0;
+}
+body.dark-theme .activity-name {
+  color: #f0f0f0;
+}
+body.dark-theme .activity-meta {
+  color: #a0a0a0;
+}
+body.dark-theme .activity-stats p {
+  color: #d1d5db;
+}
+body.dark-theme .activity-stats .stat-label {
+  color: #a0a0a0;
+}
+
+/* Responsive for ActivityItem */
+@media (min-width: 769px) {
+  .activity-item { 
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+  .activity-stats { 
+    text-align: right;
+    width: auto;
+    min-width: 150px;
+    margin-top: 0;
+    flex-direction: column;
+    gap: 2px;
+  }
+   .activity-stats p { 
+     justify-content: flex-end;
+   }
+}
+
+@media (max-width: 480px) {
+  .activity-item { 
+    padding: 10px 15px;
+  }
+  .activity-name { 
+    font-size: 1em;
+  }
+   .activity-icon { 
+    font-size: 1.6em;
+    width: 40px;
+    height: 40px;
+  }
+}

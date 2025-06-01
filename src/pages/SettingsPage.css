@@ -1,0 +1,166 @@
+/* Settings Page Specific Styles */
+.settings-view-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f1f3f5;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-item-label,
+.setting-item span:first-child {
+  font-weight: 500;
+  color: #343a40;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.setting-item span:last-child {
+  color: #495057;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+
+.toggle-switch-container {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-switch {
+  background-color: #e9ecef;
+  border: 1px solid #dee2e6;
+  border-radius: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  position: relative;
+  width: 100px;
+  height: 32px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+
+.toggle-switch[aria-checked="true"] {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+  justify-content: flex-end;
+}
+
+.toggle-switch-handle {
+  background-color: white;
+  border-radius: 50%;
+  display: block;
+  height: 24px;
+  width: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.toggle-switch-label {
+  font-size: 0.8em;
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #495057;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.toggle-switch[aria-checked="true"] .toggle-switch-label {
+  color: white;
+}
+
+
+.toggle-switch:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.4);
+}
+
+
+.settings-button {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 0.95em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.settings-button:hover,
+.settings-button:focus-visible {
+  background-color: #16a085;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+
+/* Dark Theme for SettingsPage */
+body.dark-theme .setting-item {
+  border-bottom-color: #343a40;
+}
+
+body.dark-theme .setting-item-label,
+body.dark-theme .setting-item span:first-child {
+  color: #e9ecef;
+}
+
+body.dark-theme .setting-item span:last-child {
+  color: #adb5bd;
+}
+
+body.dark-theme .toggle-switch {
+  background-color: #343a40;
+  border-color: #495057;
+}
+
+body.dark-theme .toggle-switch[aria-checked="true"] {
+  background-color: #20c997;
+  border-color: #20c997;
+}
+
+body.dark-theme .toggle-switch-handle {
+  background-color: #1e1e1e;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .toggle-switch[aria-checked="false"] .toggle-switch-label {
+  color: #adb5bd;
+}
+
+body.dark-theme .toggle-switch[aria-checked="true"] .toggle-switch-label {
+  color: #121212;
+}
+
+body.dark-theme .toggle-switch:focus-visible {
+  box-shadow: 0 0 0 3px rgba(32, 201, 151, 0.5);
+}
+
+
+/* Responsive for SettingsPage */
+@media (max-width: 480px) {
+  .settings-button {
+    width: 100%;
+    padding: 14px;
+  }
+}

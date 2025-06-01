@@ -4,7 +4,13 @@ import Sidebar from './components/Sidebar';
 import './App.css'
 import AppHeader from './components/AppHeader';
 import DashboardPage from './pages/DashboardPage';
+import ActivitiesListPage from './pages/ActivitiesListPage';
+import ActivityDetailPage from './pages/ActivityDetailPage';
 import type { Activity } from './types/types';
+import MapsPage from './pages/MapsPage';
+import CalendarPage from './pages/CalendarPage';
+import SettingsPage from './pages/SettingsPage';
+import UserProfilePage from './pages/UserProfilePage';
 
 function App() {
   const [activities, setActivities] = useState<Activity[]>([]);
@@ -68,12 +74,12 @@ function App() {
             <Routes>
               <Route path="/" element={<Navigate replace to="/dashboard" />} />
               <Route path="/dashboard" element={<DashboardPage activities={activities} />} />
-              {/* <Route path="/activities" element={<ActivitiesListView activities={activities} />} />
-              <Route path="/activity/:activityId" element={<ActivityDetailPageRoute activities={activities} />} />
-              <Route path="/maps" element={<MapsView activities={activities} />} />
-              <Route path="/calendar" element={<CalendarView activities={activities} />} />
-              <Route path="/settings" element={<SettingsView theme={theme} />} />
-              <Route path="/profile" element={<UserProfileView activities={activities} />} /> */}
+              <Route path="/activities" element={<ActivitiesListPage activities={activities} />} />
+              <Route path="/activity/:activityId" element={<ActivityDetailPage activities={activities} />} />
+              <Route path="/maps" element={<MapsPage activities={activities} />} />
+              <Route path="/calendar" element={<CalendarPage activities={activities} />} />
+              <Route path="/settings" element={<SettingsPage theme={theme} />} />
+              <Route path="/profile" element={<UserProfilePage activities={activities} />} />
               <Route path="*" element={
                 <div className="error-message" role="alert">
                   <h2>404 - Page Not Found</h2>
