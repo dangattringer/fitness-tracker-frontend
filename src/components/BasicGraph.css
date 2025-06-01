@@ -1,0 +1,75 @@
+.basic-graph-svg {
+  width: 100%; 
+  height: 200px; /* Default height, adjust as needed or via props */
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  display: block;
+  transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+.basic-graph-svg .axis-line {
+  stroke: #999;
+  stroke-width: 1;
+  transition: stroke 0.3s ease;
+}
+
+.basic-graph-svg .data-line {
+  fill: none;
+  stroke-width: 2;
+}
+
+.basic-graph-svg .axis-label,
+.basic-graph-svg .no-data-text,
+.basic-graph-svg .insufficient-data-text {
+  font-size: 0.75em; 
+  fill: #555;
+  text-anchor: middle;
+  transition: fill 0.3s ease;
+}
+.basic-graph-svg .y-axis-label {
+  writing-mode: vertical-rl;
+  text-anchor: middle;
+}
+
+/* For the placeholder when no data is available */
+.graph-placeholder { 
+  width: 100%;
+  height: 200px; 
+  background-color: #e9ecef; 
+  border: 1px dashed #ced4da; 
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em; 
+  color: #6c757d; 
+  font-style: italic;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Theme for BasicGraph */
+body.dark-theme .basic-graph-svg {
+  background-color: #2c2c2c;
+  border-color: #444;
+}
+body.dark-theme .basic-graph-svg .axis-line { stroke: #666; }
+body.dark-theme .basic-graph-svg .axis-label,
+body.dark-theme .basic-graph-svg .no-data-text,
+body.dark-theme .basic-graph-svg .insufficient-data-text { fill: #aaa; }
+
+body.dark-theme .graph-placeholder {
+  background-color: #3a3a3a;
+  border-color: #555;
+  color: #aaa;
+}
+
+/* Responsive for BasicGraph */
+@media (max-width: 480px) {
+  .basic-graph-svg {
+    height: 180px; /* Slightly smaller for small phones */
+  }
+  .graph-placeholder {
+    height: 180px; 
+  }
+}
