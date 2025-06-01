@@ -1,0 +1,71 @@
+.sidebar {
+  /* width: 100%; */ /* Removed, now handled by index.css */
+  background-color: #2c3e50;
+  padding: 20px 0;
+  color: #ecf0f1;
+  /* flex-shrink: 0; */ /* Removed, now handled by index.css */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Positioning, height, and fixed width are handled in index.css */
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: background-color 0.2s ease, padding-left 0.2s ease, color 0.3s ease;
+}
+
+.sidebar-nav li a .nav-icon {
+  margin-right: 10px;
+  font-size: 1.2em;
+  width: 24px; /* Ensure icons align */
+  text-align: center;
+}
+
+.sidebar-nav li a:hover {
+  background-color: #34495e;
+  padding-left: 25px;
+}
+
+.sidebar-nav li a.active {
+  background-color: #1abc9c;
+  color: #ffffff;
+  font-weight: bold;
+  padding-left: 25px;
+}
+
+/* Dark Theme for Sidebar */
+body.dark-theme .sidebar {
+  background-color: #232f3c; /* Slightly darker sidebar */
+  color: #d1d1d1;
+}
+body.dark-theme .sidebar-nav li a {
+  color: #d1d1d1;
+}
+body.dark-theme .sidebar-nav li a:hover {
+  background-color: #2c3a4a;
+}
+body.dark-theme .sidebar-nav li a.active {
+  background-color: #1abc9c; /* Keep active color vibrant */
+  color: #ffffff;
+}
+
+/* Responsive for Sidebar content */
+@media (max-width: 480px) {
+  .sidebar-nav li a {
+    padding: 10px 15px;
+    font-size: 1em;
+  }
+  .sidebar-nav li a .nav-icon {
+    margin-right: 8px;
+  }
+}
