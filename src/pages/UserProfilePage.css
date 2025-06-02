@@ -1,5 +1,4 @@
-/* User Profile Page Specific Styles */
-.profile-view-container {
+User Profile Page Specific Styles .profile-view-container {
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -197,5 +196,318 @@ body.dark-theme .profile-stat-item .stat-value {
 
   .profile-stats-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Settings Page Specific Styles */
+.settings-view-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  /* Increased gap */
+}
+
+/* .settings-section uses .card-style (global) */
+/* .settings-section-title is handled by .card-style overrides for h3 */
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  /* Increased vertical padding */
+  border-bottom: 1px solid #f1f3f5;
+  /* Softer border */
+  transition: border-bottom-color 0.3s ease;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-item-label,
+.setting-item span:first-child {
+  /* For items like App Version */
+  font-weight: 500;
+  color: #343a40;
+  /* Darker label */
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.setting-item span:last-child {
+  /* For values like version number */
+  color: #495057;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+
+.toggle-switch-container {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-switch {
+  background-color: #e9ecef;
+  /* Lighter off state */
+  border: 1px solid #dee2e6;
+  border-radius: 16px;
+  /* More pill-shaped */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  /* Padding around handle */
+  position: relative;
+  width: 100px;
+  /* Increased width for better label display */
+  height: 32px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+
+.toggle-switch[aria-checked="true"] {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+  justify-content: flex-end;
+}
+
+.toggle-switch-handle {
+  background-color: white;
+  border-radius: 50%;
+  display: block;
+  height: 24px;
+  /* Slightly smaller handle */
+  width: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  /* Smoother spring-like animation */
+}
+
+.toggle-switch-label {
+  font-size: 0.8em;
+  /* Smaller label text */
+  font-weight: 600;
+  /* Bolder label */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #495057;
+  /* Darker label for off state */
+  pointer-events: none;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.toggle-switch[aria-checked="true"] .toggle-switch-label {
+  color: white;
+}
+
+
+.toggle-switch:focus-visible {
+  /* Modern focus indicator */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.4);
+}
+
+
+.settings-button {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  /* Increased padding */
+  border-radius: 8px;
+  /* More rounded */
+  font-size: 0.95em;
+  /* Slightly adjusted */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.settings-button:hover,
+.settings-button:focus-visible {
+  background-color: #16a085;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+/* File Upload Section Styles */
+.upload-activity-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f3f5;
+}
+
+.upload-activity-section h4 {
+  font-size: 1.1em;
+  color: #343a40;
+  margin-bottom: 15px;
+}
+
+.file-upload-control {
+  margin-bottom: 15px;
+}
+
+.file-upload-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-upload-label {
+  /* Reuses settings-button style for consistency */
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.upload-button {
+  /* Reuses .settings-button style */
+}
+
+.upload-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.upload-button:disabled:hover {
+  background-color: #bdc3c7;
+}
+
+
+.upload-feedback {
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+.upload-message.loading {
+  color: #3498db;
+  /* Blue for loading */
+}
+
+.upload-message.success {
+  color: #27ae60;
+  /* Green for success */
+  font-weight: 500;
+}
+
+.upload-message.error {
+  color: #c0392b;
+  /* Red for error */
+  font-weight: 500;
+}
+
+
+/* Dark Theme for SettingsPage */
+body.dark-theme .setting-item,
+body.dark-theme .upload-activity-section {
+  border-bottom-color: #343a40;
+  border-top-color: #343a40;
+  /* For upload section's top border */
+}
+
+body.dark-theme .setting-item-label,
+body.dark-theme .setting-item span:first-child,
+body.dark-theme .upload-activity-section h4 {
+  color: #e9ecef;
+}
+
+body.dark-theme .setting-item span:last-child {
+  color: #adb5bd;
+}
+
+body.dark-theme .toggle-switch {
+  background-color: #343a40;
+  border-color: #495057;
+}
+
+body.dark-theme .toggle-switch[aria-checked="true"] {
+  background-color: #20c997;
+  /* Brighter accent for dark */
+  border-color: #20c997;
+}
+
+body.dark-theme .toggle-switch-handle {
+  background-color: #1e1e1e;
+  /* Dark handle */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .toggle-switch[aria-checked="false"] .toggle-switch-label {
+  color: #adb5bd;
+  /* Lighter label for off state */
+}
+
+body.dark-theme .toggle-switch[aria-checked="true"] .toggle-switch-label {
+  color: #121212;
+  /* Dark text on bright active toggle */
+}
+
+body.dark-theme .toggle-switch:focus-visible {
+  box-shadow: 0 0 0 3px rgba(32, 201, 151, 0.5);
+}
+
+body.dark-theme .upload-button:disabled {
+  background-color: #495057;
+}
+
+body.dark-theme .upload-message.loading {
+  color: #5dade2;
+}
+
+body.dark-theme .upload-message.success {
+  color: #2ecc71;
+}
+
+body.dark-theme .upload-message.error {
+  color: #e74c3c;
+}
+
+
+/* Responsive for SettingsPage */
+@media (max-width: 480px) {
+
+  .settings-button,
+  /* Apply to all settings buttons */
+  .file-upload-label,
+  /* Ensure label also takes full width */
+  .upload-button {
+    width: 100%;
+    padding: 14px;
+    /* Larger tap target */
+  }
+
+  .file-upload-control {
+    width: 100%;
+  }
+
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    /* Increased gap for stacked items */
+  }
+
+  .toggle-switch-container {
+    width: 100%;
+  }
+
+  .toggle-switch {
+    width: 100%;
+    /* Full width toggle button */
   }
 }
